@@ -11,8 +11,24 @@ namespace AddressBook_ADO
             Console.WriteLine("===============================");
 
             DatabaseManager manager = new DatabaseManager();
+            
             //UC1
-            manager.CreateDatabase();
+            //manager.CreateDatabase();
+            
+            //UC2
+            Person person = new Person();
+            person.FirstName = "Akash";
+            person.LastName = "Suchak";
+            person.Address = "GUJ";
+            person.PhoneNumber = "9090909090";
+            person.ZipCode = 380001;
+            person.City = "AMD";
+            person.State = "GUJ";
+            person.EmailId = "example@gmail.com";
+            person.AddressBookName = "Akash";
+            person.Type = "Family";
+
+            manager.AddEmployee(person);
         }
-    }
+    }    
 }

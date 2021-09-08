@@ -7,6 +7,8 @@ namespace AddressBook_ADO
     class Person
     {
         //Getter Setter       
+        public string AddressBookName { get; set; }
+        public string Type { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Address { get; set; }
