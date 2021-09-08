@@ -38,7 +38,7 @@ namespace AddressBook_ADO
             }
         }
 
-        public bool AddEmployee(Person person)
+        public bool AddPerson(Person person)
         {
             try
             {
@@ -72,6 +72,37 @@ namespace AddressBook_ADO
             {
                 Console.WriteLine(e.Message);
             }                           
+            finally
+            {
+                this.myConn.Close();
+            }
+            return false;
+        }
+        public bool UpdatePerson(Person person)
+        {
+            try
+            {
+                using (this.myConn)
+                {
+                    SqlCommand command = new SqlCommand("sp_updatePersonDetails", this.myConn);
+                    
+                    command.CommandType = System.Data.CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@AddressBookName", person.AddressBookName);
+                    command.Parameters.AddWithValue("@Address", person.Address);
+                    
+                    this.myConn.Open();
+                    var result = command.ExecuteNonQuery();
+                    this.myConn.Close();
+                    if (result != 0)
+                        return true;
+
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
             finally
             {
                 this.myConn.Close();

@@ -18,23 +18,29 @@ GO
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-CREATE PROCEDURE [dbo].[sp_AddPersonDetails]
+ALTER PROCEDURE [dbo].[sp_updatePersonDetails]
 (
 	-- Add the parameters for the stored procedure here	
 	@AddressBookName varchar(25),
-	@Type varchar(25),
-	@FirstName varchar(25),
-	@LastName varchar(25),
-	@Address varchar(150),
-	@PhoneNumber varchar(15),
-	@zipcode int,
-	@City varchar(25),
-	@State varchar(25),
-	@EmailId varchar(50)	
+	--@Type varchar(25),
+	--@FirstName varchar(25),
+	--@LastName varchar(25),
+	@Address varchar(150)
+	--@PhoneNumber varchar(15),
+	--@zipcode int,
+	--@City varchar(25),
+	--@State varchar(25),
+	--@EmailId varchar(50)	
 )
 AS
 BEGIN
-	INSERT into AddressBook values 
-	(@AddressBookName,@Type, @FirstName, @LastName, @Address, @PhoneNumber, @zipcode, @City, @State, @EmailId)
+	--UC3
+	--INSERT into AddressBook values 
+	--(@AddressBookName,@Type, @FirstName, @LastName, @Address, @PhoneNumber, @zipcode, @City, @State, @EmailId)
+
+	--UC4
+	update AddressBook 
+		set Address = @Address 
+		where AddressBookName = @AddressBookName
 END
 GO
