@@ -18,27 +18,32 @@ namespace AddressBook_ADO
             
             Person person = new Person();
             //UC2 and 3
-            person.FirstName = "Hello";
-            person.LastName = "Suchak";
+            /*person.FirstName = "Ravi";
+            person.LastName = "Pant";
             person.Address = "GUJ";
             person.PhoneNumber = "9090909090";
             person.ZipCode = 380001;
-            person.City = "AMD";
-            person.State = "GUJ";
+            person.City = "Delhi";
+            person.State = "DL";
             person.EmailId = "example@gmail.com";
-            person.AddressBookName = "Akash";
-            person.Type = "Family";
+            person.AddressBookName = "Ravi";
+            person.Type = "Friends";*/
 
-            manager.AddPerson(person);
+            //manager.AddPerson(person);
 
             //UC4
-            person.AddressBookName = "Akash";
+            /*person.AddressBookName = "Akash";
             person.Address = "AMD";
-            manager.UpdatePerson(person);
+            manager.UpdatePerson(person);*/
 
             //UC5
-            person.FirstName = "Hello";
-            manager.DeletePerson(person);
+            /*person.FirstName = "Hello";
+            manager.DeletePerson(person);*/
+
+            //UC6
+            person.City = "AMD";
+            person.State = "DL";
+            manager.RetrievePersonByCityOrState(person);
         }
     }    
 }
