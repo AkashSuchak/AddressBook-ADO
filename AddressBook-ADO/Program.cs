@@ -18,7 +18,7 @@ namespace AddressBook_ADO
             
             Person person = new Person();
             //UC2 and 3
-            /*person.FirstName = "Akash";
+            person.FirstName = "Hello";
             person.LastName = "Suchak";
             person.Address = "GUJ";
             person.PhoneNumber = "9090909090";
@@ -29,12 +29,16 @@ namespace AddressBook_ADO
             person.AddressBookName = "Akash";
             person.Type = "Family";
 
-            manager.AddPerson(person);*/
+            manager.AddPerson(person);
 
             //UC4
             person.AddressBookName = "Akash";
             person.Address = "AMD";
             manager.UpdatePerson(person);
+
+            //UC5
+            person.FirstName = "Hello";
+            manager.DeletePerson(person);
         }
     }    
 }
